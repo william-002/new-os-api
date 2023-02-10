@@ -7,6 +7,8 @@ import javax.validation.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.william.os.domain.OS;
+import com.william.os.domain.enums.Prioridade;
+import com.william.os.domain.enums.Status;
 
 public class OSDTO implements Serializable{
 
@@ -23,6 +25,7 @@ public class OSDTO implements Serializable{
 	@NotEmpty(message = "Informar uma OBSERVÇÃO")
 	private String observacoes;
 	private Integer status; // Para pegar apenas o código 
+	
 	// Pega o id de cliente e tecnico
 	private Long tecnico;
 	private Long cliente;
@@ -68,8 +71,8 @@ public class OSDTO implements Serializable{
 		this.dataFechamento = dataFechamento;
 	}
 
-	public Integer getPrioridade() {
-		return prioridade;
+	public Prioridade getPrioridade() {
+		return Prioridade.toEnum(this.prioridade);
 	}
 
 	public void setPrioridade(Integer prioridade) {
@@ -84,8 +87,8 @@ public class OSDTO implements Serializable{
 		this.observacoes = observacoes;
 	}
 
-	public Integer getStatus() {
-		return status;
+	public Status getStatus() {
+		return Status.toEnum(this.status);
 	}
 
 	public void setStatus(Integer status) {
