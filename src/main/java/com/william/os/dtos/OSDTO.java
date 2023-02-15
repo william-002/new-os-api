@@ -22,7 +22,7 @@ public class OSDTO implements Serializable{
 	private LocalDateTime dataFechamento;
 	private Integer prioridade; // Para pegar apenas o código 
 	
-	@NotEmpty(message = "Informar uma OBSERVÇÃO")
+	@NotEmpty(message = "Informar uma OBSERVAÇÃO")
 	private String observacoes;
 	private Integer status; // Para pegar apenas o código 
 	
